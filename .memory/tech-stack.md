@@ -38,11 +38,14 @@ The stack must reflect that reality — nothing more.
 
 ```
 /
-├── index.html              # The entire site
+├── index.html              # Landing page with quicklinks
+├── quickstart.html         # The 8-step vibe coding guide
+├── tools.html              # Curated tools for vibe coding
 ├── css/
-│   └── style.css           # All styles
+│   └── style.css           # All styles (shared across pages)
 ├── js/
-│   └── main.js             # All interactivity
+│   └── main.js             # All interactivity (guide page)
+├── {lang}/                  # Translated pages (e.g., /es/, /ja/) — mirrors root structure
 ├── assets/                  # Fonts, images, favicons
 ├── docs/
 │   ├── internal.md          # Design decisions, conventions, rationale

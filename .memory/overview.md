@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A single-page tutorial website that teaches people how to start vibe coding.
+A multi-page static website that teaches people how to start vibe coding. The landing page (`index.html`) serves as a hub with quicklinks to guides and resources. The first (and primary) resource is the Quickstart guide (`quickstart.html`).
 
 Not a course. Not a framework. Not a philosophy lecture.
 

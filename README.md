@@ -1,6 +1,6 @@
 # Vibe Coding Lite
 
-A single-page website that teaches people how to start vibe coding.
+A static website that teaches people how to start vibe coding.
 
 Open it. Read for five minutes. Know exactly how to start.
 
@@ -17,9 +17,11 @@ The full project intent lives in `.memory/overview.md`.
 ## Project Structure
 
 ```
-index.html          — The entire site
-css/style.css       — All styles
-js/main.js          — All interactivity
+index.html          — Landing page with quicklinks
+quickstart.html     — The 8-step vibe coding guide
+tools.html          — Curated tools for vibe coding
+css/style.css       — All styles (shared)
+js/main.js          — Interactivity (guide page)
 ```
 
 ### Planning
