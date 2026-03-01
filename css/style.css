@@ -350,7 +350,7 @@ footer p:last-child {
    Navigation
    =========================== */
 
-nav:not(.landing-nav) {
+nav:not(.landing-nav):not(.lang-switcher) {
   position: fixed;
   top: var(--space-xl);
   left: var(--space-lg);
@@ -358,17 +358,17 @@ nav:not(.landing-nav) {
   z-index: 50;
 }
 
-nav:not(.landing-nav) ul {
+nav:not(.landing-nav):not(.lang-switcher) ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-nav:not(.landing-nav) li {
+nav:not(.landing-nav):not(.lang-switcher) li {
   margin-bottom: 0;
 }
 
-nav:not(.landing-nav) a {
+nav:not(.landing-nav):not(.lang-switcher) a {
   display: block;
   padding: var(--space-xs) var(--space-sm);
   font-size: var(--text-sm);
@@ -378,12 +378,12 @@ nav:not(.landing-nav) a {
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
-nav:not(.landing-nav) a:hover {
+nav:not(.landing-nav):not(.lang-switcher) a:hover {
   color: var(--color-text);
   text-decoration: none;
 }
 
-nav:not(.landing-nav) a.active {
+nav:not(.landing-nav):not(.lang-switcher) a.active {
   color: var(--color-nav-active);
   border-left-color: var(--color-nav-active);
   font-weight: 500;
@@ -440,7 +440,7 @@ pre:focus-within .copy-btn,
 
 /* Hide sidebar nav on small screens, show top bar instead */
 @media (max-width: 959px) {
-  nav:not(.landing-nav) {
+  nav:not(.landing-nav):not(.lang-switcher) {
     position: fixed;
     top: 0;
     left: 0;
@@ -454,19 +454,19 @@ pre:focus-within .copy-btn,
     z-index: 50;
   }
 
-  nav:not(.landing-nav) ul {
+  nav:not(.landing-nav):not(.lang-switcher) ul {
     display: flex;
     gap: var(--space-xs);
     white-space: nowrap;
   }
 
-  nav:not(.landing-nav) a {
+  nav:not(.landing-nav):not(.lang-switcher) a {
     border-left: none;
     border-bottom: 2px solid transparent;
     padding: var(--space-xs) var(--space-sm);
   }
 
-  nav:not(.landing-nav) a.active {
+  nav:not(.landing-nav):not(.lang-switcher) a.active {
     border-left: none;
     border-bottom-color: var(--color-nav-active);
   }
@@ -518,7 +518,7 @@ pre:focus-within .copy-btn,
     padding-left: var(--content-padding);
   }
 
-  nav:not(.landing-nav) {
+  nav:not(.landing-nav):not(.lang-switcher) {
     left: calc(50% - var(--max-width) / 2 - var(--nav-width) - var(--space-2xl));
   }
 }
