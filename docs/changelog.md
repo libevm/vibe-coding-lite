@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-03-02 (i)
+
+### Added
+- Korean (`/ko/`) and Japanese (`/ja/`) translations — all 3 pages each
+- Spanish (`/es/`) and Chinese (`/zh/`) translations — all 3 pages each (created earlier, now complete)
+
+### Changed
+- Moved language switcher from footer to header (above title) on all 15 pages
+- Updated `hreflang` tags on all 15 pages to cross-reference all 5 languages
+- Fixed guide page footer being hidden behind fixed sidebar nav on desktop (added `padding-left` to footer at 960px+)
+- Lang-switcher now uses `flex-wrap` to handle 5 languages gracefully
+- Rewrote `README.md` — now just subtitle, language list, and quickstart
+- Added Rule 9 (Internationalization) to `AGENTS.md` — every new English page must have translations in all languages
+- Updated `AGENTS.md` intro, file structure, and rule numbering
+
+### Why
+- Site now serves 5 languages. The i18n rule ensures translations stay in sync as the site grows.
+
+### Memory updates
+- `.memory/tech-stack.md` (updated — explicit language directories)
+- `docs/internal.md` (updated — current languages, switcher position, prompt convention)
+- `AGENTS.md` (updated — i18n rule, file structure, intro)
+- `README.md` (rewritten)
+
+---
+
 ## 2026-03-02 (h)
 
 ### Added

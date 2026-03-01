@@ -49,7 +49,7 @@ All subpages include a `.back-link` in the header for navigation back to the lan
 The site uses a directory-based approach for translations:
 
 - English (default) lives at root: `/index.html`, `/quickstart.html`, `/tools.html`
-- Translations go in `/{lang}/` directories mirroring root: `/es/index.html`, `/ja/quickstart.html`, etc.
+- Translations live in `/{lang}/` directories mirroring root: `/es/`, `/zh/`, `/ko/`, `/ja/`
 - Each page includes `<link rel="alternate" hreflang="...">` tags for all available languages plus `x-default`
 - A `.lang-switcher` nav in the footer shows available languages
 
@@ -64,9 +64,12 @@ The site uses a directory-based approach for translations:
 
 ### Convention
 
-- Language codes follow BCP 47 (e.g., `en`, `es`, `ja`, `zh-Hans`)
+- Language codes follow BCP 47 (e.g., `en`, `es`, `ja`, `zh-Hans`, `ko`)
+- Current languages: English (root), Spanish (`/es/`), Chinese (`/zh/`), Korean (`/ko/`), Japanese (`/ja/`)
 - Root always serves English and is the `x-default`
 - Translation pages are full copies — no JS-based string swapping, no build step
+- Language switcher is placed in the header (above the title), not the footer
+- Prompts (code blocks for AI agents) stay in English across all translations
 
 ## Accessibility
 

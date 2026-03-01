@@ -1,6 +1,8 @@
 # AGENTS.md
 
-You are working on **Vibe Coding Lite** — a single-page static website that teaches people how to start vibe coding.
+You are working on **Vibe Coding Lite** — a multi-page static website that teaches people how to vibe code.
+
+Available in 5 languages: English (root), Spanish (`/es/`), Chinese (`/zh/`), Korean (`/ko/`), Japanese (`/ja/`).
 
 Read `.memory/overview.md` before doing anything.
 
@@ -47,9 +49,15 @@ If you believe a new dependency is needed, state the case in plain language. Do 
 ### 4. Follow the file structure
 
 ```
-index.html          — The entire site (single file)
-css/style.css       — All styles (single file)
-js/main.js          — All interactivity (single file)
+index.html          — Landing page
+quickstart.html     — 8-step guide
+tools.html          — Curated tools
+css/style.css       — All styles (shared)
+js/main.js          — All interactivity (guide page)
+es/                 — Spanish translations (mirrors root)
+zh/                 — Chinese translations (mirrors root)
+ko/                 — Korean translations (mirrors root)
+ja/                 — Japanese translations (mirrors root)
 assets/             — Static assets only
 docs/               — Internal docs and changelog
 .memory/            — Project intent and decisions
@@ -88,13 +96,26 @@ Do not create new top-level files or directories without explicit approval.
 - One file: `js/main.js`
 - `window.onerror` handler for dev error visibility
 
-### 9. Content integrity
+### 9. Internationalization
+
+When adding or modifying an English page:
+
+- Create or update the corresponding page in **all** language directories: `es/`, `zh/`, `ko/`, `ja/`
+- Update `hreflang` link tags on **all** pages (all languages) to include the new page
+- Update the `.lang-switcher` nav on **all** pages to link to the new page in each language
+- CSS and JS paths from language directories use `../css/style.css`, `../js/main.js`
+- Back-links point to the language-specific landing page (e.g., `/es/`, `/ko/`)
+- Prompts (code blocks meant for AI agents) stay in English; surrounding text is translated
+
+If you add a new English page but not the translations, the change is incomplete.
+
+### 10. Content integrity
 
 The guide content in `.memory/vibe-coding-guide.md` is the source of truth.
 
 If you modify how content is presented in `index.html`, do not alter the meaning, sequence, or structure of the guide itself without explicit approval.
 
-### 10. Changelog format
+### 11. Changelog format
 
 Every entry in `docs/changelog.md` must follow:
 

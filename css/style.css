@@ -487,27 +487,35 @@ pre:focus-within .copy-btn,
 
 /* Desktop: offset main for sidebar */
 @media (min-width: 960px) {
-  body:not(.landing) main {
+  body:not(.landing):not(.subpage) main {
     margin-left: calc(var(--nav-width) + var(--space-3xl));
   }
 
-  body:not(.landing) header {
+  body:not(.landing):not(.subpage) header {
     margin-left: calc(var(--nav-width) + var(--space-3xl));
+  }
+
+  body:not(.landing):not(.subpage) footer {
+    padding-left: calc(var(--nav-width) + var(--space-3xl));
   }
 }
 
 /* Large screens: re-center */
 @media (min-width: 1280px) {
-  body:not(.landing) main {
+  body:not(.landing):not(.subpage) main {
     margin-left: auto;
     margin-right: auto;
     max-width: var(--max-width);
   }
 
-  body:not(.landing) header {
+  body:not(.landing):not(.subpage) header {
     margin-left: auto;
     margin-right: auto;
     max-width: calc(var(--max-width) + var(--nav-width) + var(--space-3xl));
+  }
+
+  body:not(.landing):not(.subpage) footer {
+    padding-left: var(--content-padding);
   }
 
   nav:not(.landing-nav) {
@@ -730,7 +738,7 @@ code[class*="language-"] {
    =========================== */
 
 .lang-switcher {
-  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 
 .lang-switcher ul {
@@ -739,7 +747,8 @@ code[class*="language-"] {
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: var(--space-sm);
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-sm);
 }
 
 .lang-switcher li {

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vibe codingチュートリアル — コピー＆ペーストのプロンプト8つでAIコーディングを学ぶ。AIエージェントでソフトウェアを構築するステップバイステップガイド。">
+  <meta name="keywords" content="vibe coding, AIコーディングチュートリアル, バイブコーディングガイド, AIプログラミング, AIエージェント, AIコーディング入門, AIでコード作成">
+  <meta property="og:title" content="Vibe Coding Lite — 8ステップでAIコーディングを学ぶ">
+  <meta property="og:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト8つでアイデアから動くソフトウェアまで。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vibecodinglite.dev/ja/quickstart.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vibe Coding Lite — 8ステップでAIコーディングを学ぶ">
+  <meta name="twitter:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト8つでアイデアから動くソフトウェアまで。">
+  <link rel="canonical" href="https://vibecodinglite.dev/ja/quickstart.html">
+  <link rel="alternate" hreflang="en" href="https://vibecodinglite.dev/quickstart.html">
+  <link rel="alternate" hreflang="es" href="https://vibecodinglite.dev/es/quickstart.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://vibecodinglite.dev/zh/quickstart.html">
+  <link rel="alternate" hreflang="ko" href="https://vibecodinglite.dev/ko/quickstart.html">
+  <link rel="alternate" hreflang="ja" href="https://vibecodinglite.dev/ja/quickstart.html">
+  <link rel="alternate" hreflang="x-default" href="https://vibecodinglite.dev/quickstart.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <title>Vibe Coding Lite — AIコーディングチュートリアル：ステップバイステップガイド</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKYTG0WN99"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KKYTG0WN99');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Vibe Codingのやり方 — ステップバイステップチュートリアル",
+    "description": "8ステップでvibe codingを学びます。AIエージェントにプロンプトをコピー＆ペーストして、アイデアから動くソフトウェアまで。",
+    "inLanguage": "ja",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "技術なしでシステムを説明する", "text": ".memory/overview.mdを作成し、構築するものを平易な言葉で説明します — フレームワークなし、APIなし。" },
+      { "@type": "HowToStep", "position": 2, "name": "状態を定義する", "text": ".memory/state-transitions.mdを作成し、すべてのシステム状態、遷移、無効なパス、Mermaidダイアグラムを含めます。" },
+      { "@type": "HowToStep", "position": 3, "name": "スタックを選ぶ", "text": "AIに.memory/をレビューさせ、初日からロギングとトレーシングを含む最もシンプルなスタックを推薦させます。" },
+      { "@type": "HowToStep", "position": 4, "name": "エントリーポイントを作る", "text": "人間向けのREADME.mdとAIの行動契約であるAGENTS.mdを生成します。" },
+      { "@type": "HowToStep", "position": 5, "name": "実装計画を立てる", "text": ".memory/implementation-plan.mdを生成します。小さく、単一目標で、検証テスト付きのステップで。" },
+      { "@type": "HowToStep", "position": 6, "name": "曖昧さを排除する", "text": "AIに.memory/の不明確な仮定と異なる解釈の可能性をコード作成前にレビューさせます。" },
+      { "@type": "HowToStep", "position": 7, "name": "ステップバイステップで実装する", "text": "一度に1ステップずつ実行し、次に進む前に人間の承認を得ます。" },
+      { "@type": "HowToStep", "position": 8, "name": "セキュリティチェック", "text": "状態仮定の破壊、プロンプトインジェクション、監査ログの欠落についてアプリケーションをストレステストします。" }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#content" class="skip-link">コンテンツへスキップ</a>
+
+  <header>
+    <nav class="lang-switcher" aria-label="言語">
+      <ul>
+        <li><a href="/quickstart.html">EN</a></li>
+        <li><a href="/es/quickstart.html">ES</a></li>
+        <li><a href="/zh/quickstart.html">中文</a></li>
+        <li><a href="/ko/quickstart.html">한국어</a></li>
+        <li><a href="/ja/quickstart.html" aria-current="true" class="lang-active">日本語</a></li>
+      </ul>
+    </nav>
+    <a href="/ja/" class="back-link" aria-label="ホームに戻る">← ホーム</a>
+    <h1>Vibe Coding Lite</h1>
+    <p class="tagline">ノイズのほとんどは不要です。本当に大事なことだけ。</p>
+  </header>
+
+  <nav aria-label="ガイドセクション">
+    <ul>
+      <li><a href="#tools">ツール</a></li>
+      <li><a href="#intro">概要</a></li>
+      <li><a href="#mindset">マインドセット</a></li>
+      <li><a href="#system">システム</a></li>
+      <li><a href="#step-1">1. 説明</a></li>
+      <li><a href="#step-2">2. 状態</a></li>
+      <li><a href="#step-3">3. スタック</a></li>
+      <li><a href="#step-4">4. 入口</a></li>
+      <li><a href="#step-5">5. 計画</a></li>
+      <li><a href="#step-6">6. 曖昧さ</a></li>
+      <li><a href="#step-7">7. 実装</a></li>
+      <li><a href="#step-8">8. セキュリティ</a></li>
+      <li><a href="#thinking">思考</a></li>
+      <li><a href="#success">成功</a></li>
+    </ul>
+  </nav>
+
+  <main id="content">
+
+    <section id="tools"><h2>必要なもの</h2><p><strong>エージェントツールキット</strong> — <a href="https://github.com/mariozechner/pi-coding-agent">pi</a>、<a href="https://docs.anthropic.com/en/docs/build-with-claude/claude-code">claude-code</a>、<a href="https://github.com/anomalyco/opencode">opencode</a>、<a href="https://github.com/openai/codex">codex</a>、またはAIがコードベースを読み書きできるツール。</p></section>
+
+    <section id="intro"><h2>Vibe Codingとは？</h2><p>Vibe codingはAIに「アプリを作って」と言うことではありません。</p><p>AIを<strong>実行パートナー</strong>として使うことです — 方向性、構造、制約の制御はあなたが保持したまま。</p><blockquote><p>アーキテクチャの明確さを失わずに素早く進む。</p></blockquote><p>このチュートリアルがその方法を教えます。8ステップ。1ページ。今すぐ使えるコピー＆ペーストのプロンプト。</p></section>
+
+    <section id="mindset"><h2>マインドセット</h2><p>AI駆動のプロジェクトが失敗する理由はほとんど同じです：</p><ul><li>AIが構造を決定する</li><li>計画がスキップされる</li><li>理解よりもコードが速く増える</li></ul><p>Vibe codingはこれを逆転させます。</p><p><strong>あなたがまず形を定義する。AIがそれを埋める手助けをする。</strong></p><p>結果：素早く動けるが、アーキテクチャはあなたのもの。読み、説明し、恐れなく変更できます。</p></section>
+
+    <section id="system"><h2>システム</h2><p>すべては一つのアイデアを中心に回ります：</p><p><strong>プロジェクトには記憶が必要です。</strong></p><pre><code>.memory/</code></pre><p>このフォルダはプロジェクトの<em>意図</em>が存在する場所です。コードベースではありません。ドキュメントでもありません。意図 — 何を作っているか、なぜ、そしてピースがどう繋がるか。</p><p>すべての決定、すべての制約、すべてのルールがここに入ります。AIがプロジェクトを読む時、これが方向性を与えます。これがなければAIは推測します。これがあればAIは実行します。</p></section>
+
+    <section id="step-1"><span class="step-label">ステップ1</span><h2>システムを説明する — 技術用語なしで</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Create a file: .memory/overview.md
+
+This should describe the system in plain language. Answer:
+
+- What is this?
+- Who is it for?
+- What does it do?
+- What does it NOT do?
+
+Do NOT include frameworks, APIs, databases, or infrastructure.
+Think of this as describing a product to a smart investor.
+If it sounds technical — simplify it.</code></pre><p>そしてAIが書いたものを読んでください。シンプルで明確に感じるまで自分で磨いてください。これはプロジェクトで最も重要なファイルです — 後のすべてがこれに依存します。</p></section>
+
+    <section id="step-2"><span class="step-label">ステップ2</span><h2>状態を定義する</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Read .memory/overview.md, then create .memory/state-transitions.md
+
+Define:
+
+- Every possible system state
+- What causes movement between them
+- Which transitions are invalid
+- Which states are terminal
+
+Include a Mermaid diagram visualizing the flow.
+
+Every state transition must produce a structured log entry with:
+- Timestamp
+- Previous state
+- New state
+- Trigger (what caused it)
+- Actor (user, system, external event)
+- Correlation ID
+
+If a transition is rejected (invalid), log that too — with the reason.</code></pre><p>アプリはこれで<strong>ステートマシン</strong>になりました。カオス防止はここから始まります。</p><h3>ダイアグラムの例</h3><pre class="mermaid">
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Planning : describe_system
+    Planning --> Structured : define_states
+    Structured --> Ready : choose_stack
+    Ready --> Building : implement
+    Building --> Review : step_complete
+    Review --> Building : next_step
+    Review --> Done : all_steps_pass
+    Done --> [*]
+      </pre><h3>ログの例</h3><pre><code class="language-json">{
+  "ts": "2026-03-01T09:34:00Z",
+  "correlation_id": "abc-123",
+  "actor": "user:42",
+  "from": "pending",
+  "to": "active",
+  "trigger": "payment_confirmed",
+  "metadata": {}
+}</code></pre></section>
+
+    <section id="step-3"><span class="step-label">ステップ3</span><h2>スタックを選ぶ</h2><p><strong>今になって初めて技術が会話に入るべきです。</strong>これを貼り付けてください：</p><pre><code>Review .memory/
+
+Recommend:
+- The simplest viable stack
+- Minimal dependencies
+- Maximum clarity
+
+Avoid:
+- Fancy frameworks
+- Heavy abstraction
+- Premature scale tools
+
+Also require a docs/ folder that will contain:
+- Internal documentation
+- Changelog
+
+Save the recommendation to .memory/tech-stack.md</code></pre><h3>初日からロギングとトレーシング</h3><p>スタックには構造化ロギング、相関IDメカニズム、ログレベル戦略が含まれなければなりません。これはオプションではありません。</p><div class="table-wrap"><table><thead><tr><th>レベル</th><th>用途</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>きめ細かい実行パス — 関数の入口/出口、変数値</td></tr><tr><td><code>DEBUG</code></td><td>内部ロジック — 分岐判断、キャッシュヒット/ミス</td></tr><tr><td><code>INFO</code></td><td>状態遷移、ライフサイクルイベント、リクエストサマリー</td></tr><tr><td><code>WARN</code></td><td>回復可能な問題、フォールバックパス、リトライ</td></tr><tr><td><code>ERROR</code></td><td>障害、未処理状態、不変条件違反</td></tr></tbody></table></div><p>開発では詳細に。プロダクションでは構造化されクエリ可能に。すべてのリクエストにはどこまでも付いていく相関IDがあります。</p></section>
+
+    <section id="step-4"><span class="step-label">ステップ4</span><h2>エントリーポイントを作る</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Generate:
+
+README.md
+AGENTS.md
+
+---
+
+README.md (For Humans)
+
+- Explain what the project is
+- Point to .memory/
+- Point to docs/
+- Provide quickstart steps
+- Think of it as a map, not a book
+
+---
+
+AGENTS.md (For AI)
+
+Define:
+- How the AI should behave
+- What it must maintain
+- What it must update
+
+Require that any change triggers updates to:
+- .memory/
+- docs/
+- README.md
+
+No silent evolution allowed.
+
+Include logging conventions:
+- Every function must include logging at DEBUG level or above
+- State-changing operations log at INFO with before/after values
+- Error paths log at ERROR with full context
+- No swallowed exceptions
+- Correlation IDs must be propagated, never dropped
+- Log messages must be structured (key-value), not interpolated strings</code></pre></section>
+
+    <section id="step-5"><span class="step-label">ステップ5</span><h2>計画を立てる</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Generate: .memory/implementation-plan.md
+
+This is where building actually begins.
+
+Each step must:
+- Be small
+- Have a single goal
+- Contain no code
+- Include a validation test
+
+Validation must include at least one of:
+
+1. Human-in-the-loop verification
+   A manual way to confirm the feature works.
+   Examples: debug endpoint, UI state visibility, logged transition.
+
+2. AI feedback loop verification
+   A mechanism where the system's output can be evaluated
+   and fed back into the AI.
+   Examples: structured logs, evaluation outputs, state reports.
+
+Either a human can confirm correctness,
+OR the system can report correctness back to the AI.</code></pre><h3>良いトレーシングの例</h3><p>各ステップは観測可能な実行の証拠を生成すべきです：</p><pre><code class="language-bash">[TRACE] step=create_user | phase=start | input={"email":"a@b.com"}
+[DEBUG] step=create_user | check=email_unique | result=true
+[INFO]  step=create_user | phase=complete | user_id=42 | duration_ms=31</code></pre><p>失敗時：</p><pre><code class="language-bash">[ERROR] step=create_user | phase=db_insert | error="unique constraint" | input={"email":"a@b.com"}</code></pre><p>この詳細さは開発中に必須です。後でログレベルで調整してください — しかし計測は最初から存在しなければなりません。</p></section>
+
+    <section id="step-6"><span class="step-label">ステップ6</span><h2>曖昧さを排除する</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Review everything in .memory/
+
+Answer:
+- Is anything unclear?
+- What assumptions exist?
+- Where could implementations diverge?
+
+I want execution without interpretation.
+If two developers could read this plan and build different things,
+the plan isn't done yet.</code></pre></section>
+
+    <section id="step-7"><span class="step-label">ステップ7</span><h2>実装する</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Read .memory/implementation-plan.md
+
+Begin implementing step 1 only.
+
+Do not move to the next step until I confirm.
+After completing a step, show me:
+- What you did
+- How to verify it works (test, log output, or observable behavior)
+- Any decisions you made that aren't in .memory/
+
+Then STOP and wait for my approval before continuing.
+
+After each approved step:
+- Update docs/changelog.md
+- Update .memory/ if the step changed any decisions or structure</code></pre><p><strong>これが最も重要なプロンプトです。</strong>「停止して待つ」という指示があなたをループ内に保ちます。これがなければエージェントは計画を突き進み、ドリフトの修正に節約した以上の時間を費やすことになります。</p><p>各ステップの後に何を作ったかレビューしてください。何かおかしければ今修正してください — 3ステップ後ではなく。満足したら次のステップに進むよう伝えてください。</p><p>検証戦略（human-in-the-loop、AIフィードバックループ、詳細トレーシング）の詳細は<a href="https://github.com/Libevm/vibe-coding-lite">完全ガイド</a>を参照してください。</p></section>
+
+    <section id="step-8"><span class="step-label">ステップ8</span><h2>セキュリティチェック</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Perform a security stress test of the application.
+
+Include:
+- Attempt to break state assumptions
+- Test invalid transitions
+- Input misuse scenarios
+- Authorization boundary checks
+- Output manipulation attempts
+- LLM prompt injection — test every user-facing input that touches
+  a language model. Inject instructions, override system prompts,
+  attempt to leak context, extract hidden instructions, and bypass
+  content filters.
+
+Surface:
+- Hidden failure modes
+- Trust boundary violations
+- Unexpected state transitions
+- Prompt injection vulnerabilities
+
+Verify that security events are logged at WARN or ERROR:
+- Auth failures
+- Authorization denials
+- Invalid state transitions
+- Input validation rejections
+- Rate limit triggers
+
+Logs must include correlation IDs, never contain secrets,
+and be retained long enough for incident response.
+
+If any scenario isn't logged — add logging before moving on.</code></pre></section>
+
+    <section id="thinking"><h2>使いながらどう考えるか</h2><p>あなたはコードを管理しているのではありません。<strong>意図</strong>を管理しています。</p><p>この順序に従ってください：</p><ol><li><strong>形</strong> — 何を作っているか説明する</li><li><strong>ルール</strong> — どう振る舞うか定義する</li><li><strong>スタック</strong> — ツールを選ぶ</li><li><strong>実行</strong> — 作る</li></ol><p>この順序が崩れると — 複雑さが増します。</p><p>この順序が保たれると — 速度が高く維持されます。</p></section>
+
+    <section id="success"><h2>成功とはこういうもの</h2><p>以下ができるはずです：</p><ul><li>システムを一目で理解する</li><li>恐れなく修正する</li><li>新しい貢献者を素早くオンボードする</li><li>AIに作らせつつ制御を失わない</li></ul><p><strong>それがvibe codingです。</strong></p></section>
+
+  </main>
+
+  <footer>
+    <p>Vibe Coding Lite — 無料でオープンソースの vibe coding ガイド。登録不要、余計なものなし。</p>
+    <p class="footer-links"><a href="https://github.com/libevm/vibe-coding-lite">GitHub</a> · <a href="https://twitter.com/libevm">@libevm</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

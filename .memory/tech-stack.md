@@ -45,7 +45,10 @@ The stack must reflect that reality — nothing more.
 │   └── style.css           # All styles (shared across pages)
 ├── js/
 │   └── main.js             # All interactivity (guide page)
-├── {lang}/                  # Translated pages (e.g., /es/, /ja/) — mirrors root structure
+├── es/                      # Spanish translations (mirrors root)
+├── zh/                      # Chinese translations (mirrors root)
+├── ko/                      # Korean translations (mirrors root)
+├── ja/                      # Japanese translations (mirrors root)
 ├── assets/                  # Fonts, images, favicons
 ├── docs/
 │   ├── internal.md          # Design decisions, conventions, rationale
