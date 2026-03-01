@@ -330,7 +330,20 @@ footer {
 }
 
 footer p {
+  margin-bottom: var(--space-sm);
+}
+
+footer p:last-child {
   margin-bottom: 0;
+}
+
+.footer-links a {
+  color: var(--color-footer-text);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
 }
 
 /* ===========================
