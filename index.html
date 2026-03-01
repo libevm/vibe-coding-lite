@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Most of the noise is optional. Here's what actually matters — a guide to vibe coding with copy-paste prompts for your AI agent.">
+  <meta property="og:title" content="Vibe Coding Lite">
+  <meta property="og:description" content="Most of the noise is optional. Here's what actually matters — vibe coding in 7 copy-paste prompts.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <title>Vibe Coding Lite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header>
+    <h1>Vibe Coding Lite</h1>
+    <p class="tagline">Most of the noise is optional. Here's what actually matters.</p>
+  </header>
+
+  <nav aria-label="Guide sections">
+    <ul>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#intro">What Is This</a></li>
+      <li><a href="#mindset">The Mindset</a></li>
+      <li><a href="#system">The System</a></li>
+      <li><a href="#step-1">1. Describe</a></li>
+      <li><a href="#step-2">2. States</a></li>
+      <li><a href="#step-3">3. Stack</a></li>
+      <li><a href="#step-4">4. Entry Points</a></li>
+      <li><a href="#step-5">5. Plan</a></li>
+      <li><a href="#step-6">6. Ambiguity</a></li>
+      <li><a href="#step-7">7. Implement</a></li>
+      <li><a href="#step-8">8. Security</a></li>
+      <li><a href="#thinking">Thinking</a></li>
+      <li><a href="#success">Success</a></li>
+    </ul>
+  </nav>
+
+  <main id="content">
+
+    <!-- ================================ -->
+    <!-- TOOLS                            -->
+    <!-- ================================ -->
+    <section id="tools">
+      <h2>What You Need</h2>
+
+      <p>An <strong>agent toolkit</strong> — <a href="https://github.com/mariozechner/pi-coding-agent">pi</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/claude-code">claude-code</a>, <a href="https://github.com/anomalyco/opencode">opencode</a>, <a href="https://github.com/openai/codex">codex</a>, or any tool that lets an AI read and write your codebase.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- INTRO                            -->
+    <!-- ================================ -->
+    <section id="intro">
+      <h2>What You're Learning</h2>
+
+      <p>Vibe coding is not about letting AI "build your app."</p>
+
+      <p>It's about using AI as an <strong>execution partner</strong> — while you retain control over direction, structure, and constraints.</p>
+
+      <blockquote>
+        <p>Move fast without losing architectural clarity.</p>
+      </blockquote>
+
+      <p>This guide teaches you how. Eight steps. One page. No rabbit holes.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- MINDSET                          -->
+    <!-- ================================ -->
+    <section id="mindset">
+      <h2>The Mindset</h2>
+
+      <p>Most AI-driven projects fail for the same reasons:</p>
+
+      <ul>
+        <li>The AI decides structure</li>
+        <li>Planning is skipped</li>
+        <li>Code grows faster than understanding</li>
+      </ul>
+
+      <p>Vibe coding flips that.</p>
+
+      <p><strong>You define the shape first. AI helps fill it in.</strong></p>
+
+      <p>The result: you move fast, but the architecture stays yours. You can read it, explain it, and change it without fear.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SYSTEM                           -->
+    <!-- ================================ -->
+    <section id="system">
+      <h2>The System</h2>
+
+      <p>Everything revolves around a single idea:</p>
+
+      <p><strong>Your project must have a memory.</strong></p>
+
+      <pre><code>.memory/</code></pre>
+
+      <p>This folder is where your project's <em>intent</em> lives. Not the codebase. Not the docs. The intent — what you're building, why, and how the pieces connect.</p>
+
+      <p>Every decision, every constraint, every rule goes here. When the AI reads your project, this is what gives it direction. Without it, the AI guesses. With it, the AI executes.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 1                           -->
+    <!-- ================================ -->
+    <section id="step-1">
+      <span class="step-label">Step 1</span>
+      <h2>Describe the System — Without Tech</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Create a file: .memory/overview.md
+
+This should describe the system in plain language. Answer:
+
+- What is this?
+- Who is it for?
+- What does it do?
+- What does it NOT do?
+
+Do NOT include frameworks, APIs, databases, or infrastructure.
+Think of this as describing a product to a smart investor.
+If it sounds technical — simplify it.</code></pre>
+
+      <p>Then read what it wrote. Refine it yourself until it feels simple and obvious. This is the most important file in your project — everything downstream depends on it.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 2                           -->
+    <!-- ================================ -->
+    <section id="step-2">
+      <span class="step-label">Step 2</span>
+      <h2>Define the States</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Read .memory/overview.md, then create .memory/state-transitions.md
+
+Define:
+
+- Every possible system state
+- What causes movement between them
+- Which transitions are invalid
+- Which states are terminal
+
+Include a Mermaid diagram visualizing the flow.
+
+Every state transition must produce a structured log entry with:
+- Timestamp
+- Previous state
+- New state
+- Trigger (what caused it)
+- Actor (user, system, external event)
+- Correlation ID
+
+If a transition is rejected (invalid), log that too — with the reason.</code></pre>
+
+      <p>Your app is now a <strong>state machine</strong>. This is where chaos prevention starts.</p>
+
+      <h3>What the diagram looks like</h3>
+
+      <pre class="mermaid">
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Planning : describe_system
+    Planning --> Structured : define_states
+    Structured --> Ready : choose_stack
+    Ready --> Building : implement
+    Building --> Review : step_complete
+    Review --> Building : next_step
+    Review --> Done : all_steps_pass
+    Done --> [*]
+      </pre>
+
+      <h3>What the logs look like</h3>
+
+      <pre><code class="language-json">{
+  "ts": "2026-03-01T09:34:00Z",
+  "correlation_id": "abc-123",
+  "actor": "user:42",
+  "from": "pending",
+  "to": "active",
+  "trigger": "payment_confirmed",
+  "metadata": {}
+}</code></pre>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 3                           -->
+    <!-- ================================ -->
+    <section id="step-3">
+      <span class="step-label">Step 3</span>
+      <h2>Choose the Stack</h2>
+
+      <p><strong>Only now should tech enter the conversation.</strong> Paste this:</p>
+
+      <pre><code>Review .memory/
+
+Recommend:
+- The simplest viable stack
+- Minimal dependencies
+- Maximum clarity
+
+Avoid:
+- Fancy frameworks
+- Heavy abstraction
+- Premature scale tools
+
+Also require a docs/ folder that will contain:
+- Internal documentation
+- Changelog
+
+Save the recommendation to .memory/tech-stack.md</code></pre>
+
+      <h3>Logging and tracing from day one</h3>
+
+      <p>Your stack must include structured logging, a correlation ID mechanism, and a log level strategy. This is not optional.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>TRACE</code></td>
+              <td>Fine-grained execution path — function entry/exit, variable values</td>
+            </tr>
+            <tr>
+              <td><code>DEBUG</code></td>
+              <td>Internal logic — branching decisions, cache hits/misses</td>
+            </tr>
+            <tr>
+              <td><code>INFO</code></td>
+              <td>State transitions, lifecycle events, request summaries</td>
+            </tr>
+            <tr>
+              <td><code>WARN</code></td>
+              <td>Recoverable issues, fallback paths, retries</td>
+            </tr>
+            <tr>
+              <td><code>ERROR</code></td>
+              <td>Failures, unhandled states, broken invariants</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Verbose in development. Structured and queryable in production. Every request gets a correlation ID that follows it everywhere.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 4                           -->
+    <!-- ================================ -->
+    <section id="step-4">
+      <span class="step-label">Step 4</span>
+      <h2>Create Entry Points</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Generate:
+
+README.md
+AGENTS.md
+
+---
+
+README.md (For Humans)
+
+- Explain what the project is
+- Point to .memory/
+- Point to docs/
+- Provide quickstart steps
+- Think of it as a map, not a book
+
+---
+
+AGENTS.md (For AI)
+
+Define:
+- How the AI should behave
+- What it must maintain
+- What it must update
+
+Require that any change triggers updates to:
+- .memory/
+- docs/
+- README.md
+
+No silent evolution allowed.
+
+Include logging conventions:
+- Every function must include logging at DEBUG level or above
+- State-changing operations log at INFO with before/after values
+- Error paths log at ERROR with full context
+- No swallowed exceptions
+- Correlation IDs must be propagated, never dropped
+- Log messages must be structured (key-value), not interpolated strings</code></pre>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 5                           -->
+    <!-- ================================ -->
+    <section id="step-5">
+      <span class="step-label">Step 5</span>
+      <h2>Build the Plan</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Generate: .memory/implementation-plan.md
+
+This is where building actually begins.
+
+Each step must:
+- Be small
+- Have a single goal
+- Contain no code
+- Include a validation test
+
+Validation must include at least one of:
+
+1. Human-in-the-loop verification
+   A manual way to confirm the feature works.
+   Examples: debug endpoint, UI state visibility, logged transition.
+
+2. AI feedback loop verification
+   A mechanism where the system's output can be evaluated
+   and fed back into the AI.
+   Examples: structured logs, evaluation outputs, state reports.
+
+Either a human can confirm correctness,
+OR the system can report correctness back to the AI.</code></pre>
+
+      <h3>What good tracing looks like</h3>
+
+      <p>Each step should produce observable proof of execution:</p>
+
+      <pre><code class="language-bash">[TRACE] step=create_user | phase=start | input={"email":"a@b.com"}
+[DEBUG] step=create_user | check=email_unique | result=true
+[INFO]  step=create_user | phase=complete | user_id=42 | duration_ms=31</code></pre>
+
+      <p>On failure:</p>
+
+      <pre><code class="language-bash">[ERROR] step=create_user | phase=db_insert | error="unique constraint" | input={"email":"a@b.com"}</code></pre>
+
+      <p>This verbosity is required during development. Dial it back later via log levels — but the instrumentation must exist from the start.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 6                           -->
+    <!-- ================================ -->
+    <section id="step-6">
+      <span class="step-label">Step 6</span>
+      <h2>Remove Ambiguity</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Review everything in .memory/
+
+Answer:
+- Is anything unclear?
+- What assumptions exist?
+- Where could implementations diverge?
+
+I want execution without interpretation.
+If two developers could read this plan and build different things,
+the plan isn't done yet.</code></pre>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 7                           -->
+    <!-- ================================ -->
+    <section id="step-7">
+      <span class="step-label">Step 7</span>
+      <h2>Implement</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Read .memory/implementation-plan.md
+
+Begin implementing step 1 only.
+
+Do not move to the next step until I confirm.
+After completing a step, show me:
+- What you did
+- How to verify it works (test, log output, or observable behavior)
+- Any decisions you made that aren't in .memory/
+
+Then STOP and wait for my approval before continuing.
+
+After each approved step:
+- Update docs/changelog.md
+- Update .memory/ if the step changed any decisions or structure</code></pre>
+
+      <p><strong>This is the most important prompt.</strong> The "stop and wait" instruction keeps you in the loop. Without it, the agent will sprint through the plan and you'll spend more time fixing drift than you saved.</p>
+
+      <p>After each step, review what it built. If something is off, correct it now — not three steps later. When you're satisfied, tell it to continue to the next step.</p>
+
+      <p>For more on verification strategies (human-in-the-loop, AI feedback loops, verbose tracing), see the <a href="https://github.com/Libevm/vibe-coding-lite">full guide</a>.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- STEP 8                           -->
+    <!-- ================================ -->
+    <section id="step-8">
+      <span class="step-label">Step 8</span>
+      <h2>Security Pass</h2>
+
+      <p>Paste this into your agent:</p>
+
+      <pre><code>Perform a security stress test of the application.
+
+Include:
+- Attempt to break state assumptions
+- Test invalid transitions
+- Input misuse scenarios
+- Authorization boundary checks
+- Output manipulation attempts
+- LLM prompt injection — test every user-facing input that touches
+  a language model. Inject instructions, override system prompts,
+  attempt to leak context, extract hidden instructions, and bypass
+  content filters.
+
+Surface:
+- Hidden failure modes
+- Trust boundary violations
+- Unexpected state transitions
+- Prompt injection vulnerabilities
+
+Verify that security events are logged at WARN or ERROR:
+- Auth failures
+- Authorization denials
+- Invalid state transitions
+- Input validation rejections
+- Rate limit triggers
+
+Logs must include correlation IDs, never contain secrets,
+and be retained long enough for incident response.
+
+If any scenario isn't logged — add logging before moving on.</code></pre>
+    </section>
+
+    <!-- ================================ -->
+    <!-- THINKING                         -->
+    <!-- ================================ -->
+    <section id="thinking">
+      <h2>How to Think While Using This</h2>
+
+      <p>You are not managing code. You are managing <strong>intent</strong>.</p>
+
+      <p>Follow this order:</p>
+
+      <ol>
+        <li><strong>Shape</strong> — describe what you're building</li>
+        <li><strong>Rules</strong> — define how it behaves</li>
+        <li><strong>Stack</strong> — choose the tools</li>
+        <li><strong>Execution</strong> — build it</li>
+      </ol>
+
+      <p>When this order breaks — complexity grows.</p>
+
+      <p>When this order holds — velocity stays high.</p>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SUCCESS                          -->
+    <!-- ================================ -->
+    <section id="success">
+      <h2>What Success Looks Like</h2>
+
+      <p>You should be able to:</p>
+
+      <ul>
+        <li>Understand your system at a glance</li>
+        <li>Modify it without fear</li>
+        <li>Onboard new contributors quickly</li>
+        <li>Let AI build without losing control</li>
+      </ul>
+
+      <p><strong>That's vibe coding.</strong></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Vibe Coding Lite — open source, no signup, no nonsense.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
