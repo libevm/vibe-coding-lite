@@ -148,7 +148,16 @@
       <span class="step-label">Paso 1</span>
       <h2>Describir el Sistema — Sin Tecnología</h2>
 
-      <p>Pega esto en tu agente:</p>
+      <p><strong>Estas cuatro preguntas solo puedes responderlas tú.</strong> La IA no sabe lo que estás construyendo — tú sí. Antes de pegar el prompt, ten tus respuestas listas, aunque sean aproximadas:</p>
+
+      <ul>
+        <li>¿Qué es esto?</li>
+        <li>¿Para quién es?</li>
+        <li>¿Qué hace?</li>
+        <li>¿Qué NO hace?</li>
+      </ul>
+
+      <p>Una vez que tengas tus respuestas, pega esto en tu agente:</p>
 
       <pre><code>Create a file: .memory/overview.md
 
@@ -163,7 +172,7 @@ Do NOT include frameworks, APIs, databases, or infrastructure.
 Think of this as describing a product to a smart investor.
 If it sounds technical — simplify it.</code></pre>
 
-      <p>Luego lee lo que escribió. Refínalo tú mismo hasta que se sienta simple y obvio. Este es el archivo más importante de tu proyecto — todo lo demás depende de él.</p>
+      <p>Luego lee lo que escribió. ¿Coincide con tu intención? Refínalo tú mismo hasta que se sienta simple y obvio. Este es el archivo más importante de tu proyecto — todo lo demás depende de él.</p>
     </section>
 
     <section id="step-2">
@@ -241,11 +250,16 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder that will contain:
+Also require a docs/ folder — a static HTML documentation site:
+- No build step, no framework, no static site generator
+- Plain .html files with one shared style.css
+- Simple client-side search across all doc pages
 - Internal documentation
 - Changelog
 
 Save the recommendation to .memory/tech-stack.md</code></pre>
+
+      <p>Tu sitio de documentación debe ser tan simple como el proyecto en sí — archivos HTML estáticos que puedes abrir en un navegador. Sin generadores, sin pasos de compilación. Incluye una búsqueda simple del lado del cliente para encontrar cualquier cosa en todas las páginas de documentación sin necesidad de un servidor.</p>
 
       <h3>Logging y trazabilidad desde el día uno</h3>
 

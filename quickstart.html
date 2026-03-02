@@ -162,7 +162,16 @@
       <span class="step-label">Step 1</span>
       <h2>Describe the System — Without Tech</h2>
 
-      <p>Paste this into your agent:</p>
+      <p><strong>These four questions can only be answered by you.</strong> The AI doesn't know what you're building — you do. Before you paste the prompt, have your answers ready, even if they're rough:</p>
+
+      <ul>
+        <li>What is this?</li>
+        <li>Who is it for?</li>
+        <li>What does it do?</li>
+        <li>What does it NOT do?</li>
+      </ul>
+
+      <p>Once you know your answers, paste this into your agent:</p>
 
       <pre><code>Create a file: .memory/overview.md
 
@@ -177,7 +186,7 @@ Do NOT include frameworks, APIs, databases, or infrastructure.
 Think of this as describing a product to a smart investor.
 If it sounds technical — simplify it.</code></pre>
 
-      <p>Then read what it wrote. Refine it yourself until it feels simple and obvious. This is the most important file in your project — everything downstream depends on it.</p>
+      <p>Then read what it wrote. Does it match your intent? Refine it yourself until it feels simple and obvious. This is the most important file in your project — everything downstream depends on it.</p>
     </section>
 
     <!-- ================================ -->
@@ -261,11 +270,16 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder that will contain:
+Also require a docs/ folder — a static HTML documentation site:
+- No build step, no framework, no static site generator
+- Plain .html files with one shared style.css
+- Simple client-side search across all doc pages
 - Internal documentation
 - Changelog
 
 Save the recommendation to .memory/tech-stack.md</code></pre>
+
+      <p>Your docs site should be as simple as the project itself — static HTML files you can open in a browser. No generators, no build steps. Include a lightweight client-side search so you can find anything across all documentation pages without a server.</p>
 
       <h3>Logging and tracing from day one</h3>
 

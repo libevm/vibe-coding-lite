@@ -186,8 +186,11 @@ Avoid:
 
 Also require:
 
-A `docs/` folder that will contain:
+A `docs/` folder — a static HTML documentation site:
 
+- No build step, no framework, no static site generator
+- Plain `.html` files with one shared `style.css`
+- Simple client-side search across all doc pages
 - Internal documentation
 - Changelog
 

@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-03-02 (iv)
+
+### Changed
+- Step 3 prompt: expanded `docs/` folder requirement to specify a static HTML documentation site — no build step, no framework, no generator. Plain `.html` files with one shared `style.css` and simple client-side search
+- Added explanatory paragraph after the Step 3 code block in all 5 languages reinforcing the static HTML docs approach
+
+### Why
+- The docs/ folder instruction was too vague — it didn't specify *how* the docs should be built. Now it explicitly requires the simplest possible approach (static HTML) consistent with the project's philosophy, and adds search so docs remain usable as they grow
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+- `.memory/vibe-coding-guide.md` (source of truth updated)
+
+### Memory updates
+- `.memory/vibe-coding-guide.md`
+
+## 2026-03-02 (iii)
+
+### Changed
+- Step 1: made it explicit that the four questions (What is this? / Who is it for? / What does it do? / What does it NOT do?) must be answered by the user, not delegated to the AI
+- Added bullet list of the four questions before the code block, with bold callout text, across all 5 languages
+- Strengthened the post-prompt paragraph to ask "Does it match your intent?"
+
+### Why
+- The previous text could be read as "paste the prompt and let the AI figure it out" — but these are questions only the human builder can answer. The AI can draft the writing, but the answers must come from the user
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+
+### Memory updates
+- None
+
 ## 2026-03-02 (ii)
 
 ### Changed

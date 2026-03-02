@@ -98,7 +98,7 @@
 
     <section id="system"><h2>システム</h2><p>すべては一つのアイデアを中心に回ります：</p><p><strong>プロジェクトには記憶が必要です。</strong></p><pre><code>.memory/</code></pre><p>このフォルダはプロジェクトの<em>意図</em>が存在する場所です。コードベースではありません。ドキュメントでもありません。意図 — 何を作っているか、なぜ、そしてピースがどう繋がるか。</p><p>すべての決定、すべての制約、すべてのルールがここに入ります。AIがプロジェクトを読む時、これが方向性を与えます。これがなければAIは推測します。これがあればAIは実行します。</p></section>
 
-    <section id="step-1"><span class="step-label">ステップ1</span><h2>システムを説明する — 技術用語なしで</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Create a file: .memory/overview.md
+    <section id="step-1"><span class="step-label">ステップ1</span><h2>システムを説明する — 技術用語なしで</h2><p><strong>この4つの質問に答えられるのはあなただけです。</strong>AIはあなたが何を作っているか知りません — あなたが知っています。プロンプトを貼り付ける前に、大まかでもいいので答えを用意してください：</p><ul><li>これは何か？</li><li>誰のためか？</li><li>何をするか？</li><li>何をしないか？</li></ul><p>答えが準備できたら、エージェントにこれを貼り付けてください：</p><pre><code>Create a file: .memory/overview.md
 
 This should describe the system in plain language. Answer:
 
@@ -109,7 +109,7 @@ This should describe the system in plain language. Answer:
 
 Do NOT include frameworks, APIs, databases, or infrastructure.
 Think of this as describing a product to a smart investor.
-If it sounds technical — simplify it.</code></pre><p>そしてAIが書いたものを読んでください。シンプルで明確に感じるまで自分で磨いてください。これはプロジェクトで最も重要なファイルです — 後のすべてがこれに依存します。</p></section>
+If it sounds technical — simplify it.</code></pre><p>そしてAIが書いたものを読んでください。あなたの意図と合っていますか？シンプルで明確に感じるまで自分で磨いてください。これはプロジェクトで最も重要なファイルです — 後のすべてがこれに依存します。</p></section>
 
     <section id="step-2"><span class="step-label">ステップ2</span><h2>状態を定義する</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Read .memory/overview.md, then create .memory/state-transitions.md
 
@@ -163,11 +163,14 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder that will contain:
+Also require a docs/ folder — a static HTML documentation site:
+- No build step, no framework, no static site generator
+- Plain .html files with one shared style.css
+- Simple client-side search across all doc pages
 - Internal documentation
 - Changelog
 
-Save the recommendation to .memory/tech-stack.md</code></pre><h3>初日からロギングとトレーシング</h3><p>スタックには構造化ロギング、相関IDメカニズム、ログレベル戦略が含まれなければなりません。これはオプションではありません。</p><div class="table-wrap"><table><thead><tr><th>レベル</th><th>用途</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>きめ細かい実行パス — 関数の入口/出口、変数値</td></tr><tr><td><code>DEBUG</code></td><td>内部ロジック — 分岐判断、キャッシュヒット/ミス</td></tr><tr><td><code>INFO</code></td><td>状態遷移、ライフサイクルイベント、リクエストサマリー</td></tr><tr><td><code>WARN</code></td><td>回復可能な問題、フォールバックパス、リトライ</td></tr><tr><td><code>ERROR</code></td><td>障害、未処理状態、不変条件違反</td></tr></tbody></table></div><p>開発では詳細に。プロダクションでは構造化されクエリ可能に。すべてのリクエストにはどこまでも付いていく相関IDがあります。</p></section>
+Save the recommendation to .memory/tech-stack.md</code></pre><p>ドキュメントサイトはプロジェクト自体と同じくらいシンプルであるべきです — ブラウザで直接開ける静的HTMLファイル。ジェネレーターもビルドステップも不要です。軽量なクライアントサイド検索を含めて、サーバーなしですべてのドキュメントページから何でも見つけられるようにしましょう。</p><h3>初日からロギングとトレーシング</h3><p>スタックには構造化ロギング、相関IDメカニズム、ログレベル戦略が含まれなければなりません。これはオプションではありません。</p><div class="table-wrap"><table><thead><tr><th>レベル</th><th>用途</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>きめ細かい実行パス — 関数の入口/出口、変数値</td></tr><tr><td><code>DEBUG</code></td><td>内部ロジック — 分岐判断、キャッシュヒット/ミス</td></tr><tr><td><code>INFO</code></td><td>状態遷移、ライフサイクルイベント、リクエストサマリー</td></tr><tr><td><code>WARN</code></td><td>回復可能な問題、フォールバックパス、リトライ</td></tr><tr><td><code>ERROR</code></td><td>障害、未処理状態、不変条件違反</td></tr></tbody></table></div><p>開発では詳細に。プロダクションでは構造化されクエリ可能に。すべてのリクエストにはどこまでも付いていく相関IDがあります。</p></section>
 
     <section id="step-4"><span class="step-label">ステップ4</span><h2>エントリーポイントを作る</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Generate:
 

@@ -148,7 +148,16 @@
       <span class="step-label">第1步</span>
       <h2>描述系统——不用技术术语</h2>
 
-      <p>将此粘贴到你的智能体中：</p>
+      <p><strong>这四个问题只有你能回答。</strong>AI不知道你在构建什么——你知道。在粘贴提示词之前，先准备好你的答案，哪怕是粗略的：</p>
+
+      <ul>
+        <li>这是什么？</li>
+        <li>为谁而做？</li>
+        <li>它做什么？</li>
+        <li>它不做什么？</li>
+      </ul>
+
+      <p>当你有了答案后，将此粘贴到你的智能体中：</p>
 
       <pre><code>Create a file: .memory/overview.md
 
@@ -163,7 +172,7 @@ Do NOT include frameworks, APIs, databases, or infrastructure.
 Think of this as describing a product to a smart investor.
 If it sounds technical — simplify it.</code></pre>
 
-      <p>然后阅读它写的内容。自己修改，直到感觉简单明了。这是你项目中最重要的文件——后续一切都依赖于它。</p>
+      <p>然后阅读它写的内容。它符合你的意图吗？自己修改，直到感觉简单明了。这是你项目中最重要的文件——后续一切都依赖于它。</p>
     </section>
 
     <section id="step-2">
@@ -241,11 +250,16 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder that will contain:
+Also require a docs/ folder — a static HTML documentation site:
+- No build step, no framework, no static site generator
+- Plain .html files with one shared style.css
+- Simple client-side search across all doc pages
 - Internal documentation
 - Changelog
 
 Save the recommendation to .memory/tech-stack.md</code></pre>
+
+      <p>你的文档站点应该和项目本身一样简单——可以直接在浏览器中打开的静态HTML文件。不需要生成器，不需要构建步骤。包含一个轻量级的客户端搜索功能，这样你就可以在所有文档页面中查找任何内容，无需服务器。</p>
 
       <h3>从第一天起就要有日志和追踪</h3>
 
