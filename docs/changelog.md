@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-02 (ii)
+
+### Changed
+- Replaced "Parallel agents OK" with "Less jargon" in the landing page opinion section across all languages
+
+### Why
+- Simplifies the messaging — "less jargon" communicates the project's ethos more clearly than a technical statement about parallel agents
+
+### Memory updates
+- None
+
 ## 2026-03-02 (i)
 
 ### Added
