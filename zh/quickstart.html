@@ -430,11 +430,27 @@ Then STOP and wait for my approval before continuing.
 
 After each approved step:
 - Update docs/changelog.md
-- Update .memory/ if the step changed any decisions or structure</code></pre>
+- Update .memory/ if the step changed any decisions or structure
+
+Before committing, write .memory/last-commit.md containing:
+- What changed (brief list)
+- Why (rationale)
+- A git diff of source code files only (.html, .css, .js, .md)
+  Never include binary files, JSON, XML, images, fonts, or lock files.
+
+Then spawn a separate agent (e.g. via tmux) to review
+.memory/last-commit.md as a code reviewer.
+The reviewer checks correctness, completeness, and rationale.
+
+If the reviewer flags issues — fix, regenerate the diff, and re-submit.
+Once approved, use the summary as the commit message, commit,
+then delete .memory/last-commit.md — it must not persist after the commit.</code></pre>
 
       <p><strong>这是最重要的提示词。</strong>"停下来等待"的指令让你保持在控制中。没有它，智能体会一路冲刺，你花在修复偏差上的时间会比省下的时间更多。</p>
 
       <p>每一步之后，检查它构建了什么。如果有什么不对，现在就纠正——不要三步之后再说。当你满意时，告诉它继续下一步。</p>
+
+      <p>提交工作流创建了一个审查关卡：没有经过第二双眼睛（即使那双眼睛是 AI 的）的检查，任何变更都不会通过。差异保持可读性，因为它只包含源代码，而理由与代码一起被记录——而不是埋在你永远不会重新阅读的提交信息中。</p>
 
       <p>关于验证策略（人工确认、AI反馈循环、详细追踪）的更多信息，请查看<a href="https://github.com/Libevm/vibe-coding-lite">完整指南</a>。</p>
     </section>

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-03-08
+
+### Added
+- Commit workflow added to the Step 7 (Implement) copy-paste prompt in the quickstart guide — after every change, summarize changes + rationale + source-code-only git diff into `.memory/last-commit.md`, spawn a code-reviewer agent to review, iterate until approved, then commit and delete the transient file
+- Same content added to all 4 translations (es, zh, ko, ja)
+- Commit workflow section in `README.md` — public-facing summary of the process
+- Commit workflow section in `.memory/vibe-coding-guide.md` — source of truth updated
+
+### Why
+- Adds a structured review gate before every commit. The diff is filtered to source code files only (no binary/JSON/XML), the rationale is captured alongside the diff, and a second agent validates before anything lands. Keeps commit history clean and intentional.
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+- `README.md`
+- `.memory/vibe-coding-guide.md`
+- `docs/changelog.md` (this entry)
+
+### Memory updates
+- `.memory/vibe-coding-guide.md`
+
+---
+
 ## 2026-03-02 (iv)
 
 ### Changed

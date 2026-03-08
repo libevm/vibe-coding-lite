@@ -406,6 +406,28 @@ Execution without interpretation.
 
 ---
 
+### Commit workflow
+
+After every change, before committing, summarize what changed and why into:
+
+```
+.memory/last-commit.md
+```
+
+This file should contain:
+
+- **What changed** — a brief list of modifications
+- **Why** — the rationale behind the changes
+- **Diff** — a `git diff` of source code files only (`.html`, `.css`, `.js`, `.md`). Never include binary files, JSON, XML, images, fonts, or lock files
+
+Then spawn a separate agent (e.g. via tmux) to act as a **code reviewer**. The reviewer reads `.memory/last-commit.md` and checks correctness, completeness, and whether the rationale holds up.
+
+If the reviewer flags issues — fix them, regenerate the diff, update the file, and re-submit. Once the reviewer is satisfied, use the summary as your git commit message, commit, then **delete `.memory/last-commit.md`**. It is a transient file — it must not persist after the commit.
+
+This creates a review gate on every commit: no change lands without a second pair of eyes (even if those eyes are an AI). The diff stays readable because it only contains source code, and the rationale is captured alongside the code — not buried in a commit message you'll never re-read.
+
+---
+
 # Step 7 - Security Pass
 
 Before considering the system stable, ask the AI to perform a penetration test of the application.

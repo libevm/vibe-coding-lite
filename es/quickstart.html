@@ -430,11 +430,27 @@ Then STOP and wait for my approval before continuing.
 
 After each approved step:
 - Update docs/changelog.md
-- Update .memory/ if the step changed any decisions or structure</code></pre>
+- Update .memory/ if the step changed any decisions or structure
+
+Before committing, write .memory/last-commit.md containing:
+- What changed (brief list)
+- Why (rationale)
+- A git diff of source code files only (.html, .css, .js, .md)
+  Never include binary files, JSON, XML, images, fonts, or lock files.
+
+Then spawn a separate agent (e.g. via tmux) to review
+.memory/last-commit.md as a code reviewer.
+The reviewer checks correctness, completeness, and rationale.
+
+If the reviewer flags issues — fix, regenerate the diff, and re-submit.
+Once approved, use the summary as the commit message, commit,
+then delete .memory/last-commit.md — it must not persist after the commit.</code></pre>
 
       <p><strong>Este es el prompt más importante.</strong> La instrucción "para y espera" te mantiene en el control. Sin ella, el agente avanzará sin parar y pasarás más tiempo corrigiendo desviaciones que el que ahorraste.</p>
 
       <p>Después de cada paso, revisa lo que construyó. Si algo no está bien, corrígelo ahora — no tres pasos después. Cuando estés satisfecho, dile que continúe al siguiente paso.</p>
+
+      <p>El flujo de commits crea una puerta de revisión: ningún cambio llega sin un segundo par de ojos (incluso si esos ojos son de una IA). El diff se mantiene legible porque solo contiene código fuente, y la justificación queda capturada junto al código — no enterrada en un mensaje de commit que nunca releerás.</p>
 
       <p>Para más sobre estrategias de verificación (human-in-the-loop, feedback loops de IA, trazabilidad verbosa), ve la <a href="https://github.com/Libevm/vibe-coding-lite">guía completa</a>.</p>
     </section>

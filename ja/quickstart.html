@@ -262,7 +262,21 @@ Then STOP and wait for my approval before continuing.
 
 After each approved step:
 - Update docs/changelog.md
-- Update .memory/ if the step changed any decisions or structure</code></pre><p><strong>これが最も重要なプロンプトです。</strong>「停止して待つ」という指示があなたをループ内に保ちます。これがなければエージェントは計画を突き進み、ドリフトの修正に節約した以上の時間を費やすことになります。</p><p>各ステップの後に何を作ったかレビューしてください。何かおかしければ今修正してください — 3ステップ後ではなく。満足したら次のステップに進むよう伝えてください。</p><p>検証戦略（human-in-the-loop、AIフィードバックループ、詳細トレーシング）の詳細は<a href="https://github.com/Libevm/vibe-coding-lite">完全ガイド</a>を参照してください。</p></section>
+- Update .memory/ if the step changed any decisions or structure
+
+Before committing, write .memory/last-commit.md containing:
+- What changed (brief list)
+- Why (rationale)
+- A git diff of source code files only (.html, .css, .js, .md)
+  Never include binary files, JSON, XML, images, fonts, or lock files.
+
+Then spawn a separate agent (e.g. via tmux) to review
+.memory/last-commit.md as a code reviewer.
+The reviewer checks correctness, completeness, and rationale.
+
+If the reviewer flags issues — fix, regenerate the diff, and re-submit.
+Once approved, use the summary as the commit message, commit,
+then delete .memory/last-commit.md — it must not persist after the commit.</code></pre><p><strong>これが最も重要なプロンプトです。</strong>「停止して待つ」という指示があなたをループ内に保ちます。これがなければエージェントは計画を突き進み、ドリフトの修正に節約した以上の時間を費やすことになります。</p><p>各ステップの後に何を作ったかレビューしてください。何かおかしければ今修正してください — 3ステップ後ではなく。満足したら次のステップに進むよう伝えてください。</p><p>コミットワークフローにより、すべてのコミットにレビューゲートが作られます：2つ目の目（たとえそれがAIの目であっても）の確認なしに変更は反映されません。diffはソースコードのみを含むため読みやすく、根拠はコードと一緒に記録されます — 二度と読み返さないコミットメッセージに埋もれることなく。</p><p>検証戦略（human-in-the-loop、AIフィードバックループ、詳細トレーシング）の詳細は<a href="https://github.com/Libevm/vibe-coding-lite">完全ガイド</a>を参照してください。</p></section>
 
     <section id="step-8"><span class="step-label">ステップ8</span><h2>セキュリティチェック</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Perform a security stress test of the application.
 
