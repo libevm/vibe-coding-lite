@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-03-15
+
+### Changed
+- Replaced PinchTab with Agent Browser (https://github.com/vercel-labs/agent-browser) in the Browser Automation section of tools page
+- Updated meta keywords from "pinchtab" to "agent-browser" on all tools pages
+
+### Why
+- Swapping to Agent Browser by Vercel Labs as the recommended browser automation tool
+
+### Files touched
+- `tools.html`, `es/tools.html`, `zh/tools.html`, `ko/tools.html`, `ja/tools.html`
+
+### Memory updates
+- None
+
 ## 2026-03-14
 
 ### Added
