@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-03-14
+
+### Added
+- New "Agent Extensions" section on the tools page with pi-extensions (https://github.com/tmustier/pi-extensions) — a collection of extensions and skills for the Pi coding agent
+- Same section added to all 4 translations (es, zh, ko, ja)
+
+### Why
+- pi-extensions provides useful coding agent tooling (file browser, tab status, long-running task loops, usage dashboard, etc.) that earns its place on the recommended tools list
+
+### Files touched
+- `tools.html`, `es/tools.html`, `zh/tools.html`, `ko/tools.html`, `ja/tools.html`
+- `docs/changelog.md` (this entry)
+
+### Memory updates
+- None
+
+---
+
 ## 2026-03-08
 
 ### Added
