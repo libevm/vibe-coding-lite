@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vibe codingチュートリアル — コピー＆ペーストのプロンプト8つでAIコーディングを学ぶ。AIエージェントでソフトウェアを構築するステップバイステップガイド。">
+  <meta name="description" content="Vibe codingチュートリアル — コピー＆ペーストのプロンプト9つでAIコーディングを学ぶ。AIエージェントでソフトウェアを構築するステップバイステップガイド。">
   <meta name="keywords" content="vibe coding, AIコーディングチュートリアル, バイブコーディングガイド, AIプログラミング, AIエージェント, AIコーディング入門, AIでコード作成">
-  <meta property="og:title" content="Vibe Coding Lite — 8ステップでAIコーディングを学ぶ">
-  <meta property="og:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト8つでアイデアから動くソフトウェアまで。">
+  <meta property="og:title" content="Vibe Coding Lite — 9ステップでAIコーディングを学ぶ">
+  <meta property="og:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト9つでアイデアから動くソフトウェアまで。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vibecodinglite.dev/ja/quickstart.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vibe Coding Lite — 8ステップでAIコーディングを学ぶ">
-  <meta name="twitter:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト8つでアイデアから動くソフトウェアまで。">
+  <meta name="twitter:title" content="Vibe Coding Lite — 9ステップでAIコーディングを学ぶ">
+  <meta name="twitter:description" content="プレッシャーのないvibe codingチュートリアル。コピー＆ペーストのプロンプト9つでアイデアから動くソフトウェアまで。">
   <link rel="canonical" href="https://vibecodinglite.dev/ja/quickstart.html">
   <link rel="alternate" hreflang="en" href="https://vibecodinglite.dev/quickstart.html">
   <link rel="alternate" hreflang="es" href="https://vibecodinglite.dev/es/quickstart.html">
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Vibe Codingのやり方 — ステップバイステップチュートリアル",
-    "description": "8ステップでvibe codingを学びます。AIエージェントにプロンプトをコピー＆ペーストして、アイデアから動くソフトウェアまで。",
+    "description": "9ステップでvibe codingを学びます。AIエージェントにプロンプトをコピー＆ペーストして、アイデアから動くソフトウェアまで。",
     "inLanguage": "ja",
     "step": [
       { "@type": "HowToStep", "position": 1, "name": "技術なしでシステムを説明する", "text": ".memory/overview.mdを作成し、構築するものを平易な言葉で説明します — フレームワークなし、APIなし。" },
@@ -43,7 +43,8 @@
       { "@type": "HowToStep", "position": 5, "name": "実装計画を立てる", "text": ".memory/implementation-plan.mdを生成します。小さく、単一目標で、検証テスト付きのステップで。" },
       { "@type": "HowToStep", "position": 6, "name": "曖昧さを排除する", "text": "AIに.memory/の不明確な仮定と異なる解釈の可能性をコード作成前にレビューさせます。" },
       { "@type": "HowToStep", "position": 7, "name": "ステップバイステップで実装する", "text": "一度に1ステップずつ実行し、次に進む前に人間の承認を得ます。" },
-      { "@type": "HowToStep", "position": 8, "name": "セキュリティチェック", "text": "状態仮定の破壊、プロンプトインジェクション、監査ログの欠落についてアプリケーションをストレステストします。" }
+      { "@type": "HowToStep", "position": 8, "name": "セキュリティチェック", "text": "状態仮定の破壊、プロンプトインジェクション、監査ログの欠落についてアプリケーションをストレステストします。" },
+      { "@type": "HowToStep", "position": 9, "name": "イノベーション", "text": "AIにこの時点でプロジェクトに加えられる最も賢く革新的な追加を見つけるよう依頼します。" }
     ]
   }
   </script>
@@ -83,6 +84,7 @@
       <li><a href="#step-6">6. 曖昧さ</a></li>
       <li><a href="#step-7">7. 実装</a></li>
       <li><a href="#step-8">8. セキュリティ</a></li>
+      <li><a href="#step-9">9. イノベーション</a></li>
       <li><a href="#thinking">思考</a></li>
       <li><a href="#success">成功</a></li>
     </ul>
@@ -92,7 +94,7 @@
 
     <section id="tools"><h2>必要なもの</h2><p><strong>エージェントツールキット</strong> — <a href="https://github.com/mariozechner/pi-coding-agent">pi</a>、<a href="https://docs.anthropic.com/en/docs/build-with-claude/claude-code">claude-code</a>、<a href="https://github.com/anomalyco/opencode">opencode</a>、<a href="https://github.com/openai/codex">codex</a>、またはAIがコードベースを読み書きできるツール。</p></section>
 
-    <section id="intro"><h2>Vibe Codingとは？</h2><p>Vibe codingはAIに「アプリを作って」と言うことではありません。</p><p>AIを<strong>実行パートナー</strong>として使うことです — 方向性、構造、制約の制御はあなたが保持したまま。</p><blockquote><p>アーキテクチャの明確さを失わずに素早く進む。</p></blockquote><p>このチュートリアルがその方法を教えます。8ステップ。1ページ。今すぐ使えるコピー＆ペーストのプロンプト。</p></section>
+    <section id="intro"><h2>Vibe Codingとは？</h2><p>Vibe codingはAIに「アプリを作って」と言うことではありません。</p><p>AIを<strong>実行パートナー</strong>として使うことです — 方向性、構造、制約の制御はあなたが保持したまま。</p><blockquote><p>アーキテクチャの明確さを失わずに素早く進む。</p></blockquote><p>このチュートリアルがその方法を教えます。9ステップ。1ページ。今すぐ使えるコピー＆ペーストのプロンプト。</p></section>
 
     <section id="mindset"><h2>マインドセット</h2><p>AI駆動のプロジェクトが失敗する理由はほとんど同じです：</p><ul><li>AIが構造を決定する</li><li>計画がスキップされる</li><li>理解よりもコードが速く増える</li></ul><p>Vibe codingはこれを逆転させます。</p><p><strong>あなたがまず形を定義する。AIがそれを埋める手助けをする。</strong></p><p>結果：素早く動けるが、アーキテクチャはあなたのもの。読み、説明し、恐れなく変更できます。</p></section>
 
@@ -308,6 +310,8 @@ Logs must include correlation IDs, never contain secrets,
 and be retained long enough for incident response.
 
 If any scenario isn't logged — add logging before moving on.</code></pre></section>
+
+    <section id="step-9"><span class="step-label">ステップ9</span><h2>イノベーション</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>whats the single smartest and most radically innovative and accretive and useful and compelling addition you could make to the project at this point?</code></pre></section>
 
     <section id="thinking"><h2>使いながらどう考えるか</h2><p>あなたはコードを管理しているのではありません。<strong>意図</strong>を管理しています。</p><p>この順序に従ってください：</p><ol><li><strong>形</strong> — 何を作っているか説明する</li><li><strong>ルール</strong> — どう振る舞うか定義する</li><li><strong>スタック</strong> — ツールを選ぶ</li><li><strong>実行</strong> — 作る</li></ol><p>この順序が崩れると — 複雑さが増します。</p><p>この順序が保たれると — 速度が高く維持されます。</p></section>
 

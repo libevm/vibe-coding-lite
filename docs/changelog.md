@@ -2,6 +2,24 @@
 
 ## 2026-03-15
 
+### Added
+- Step 9 "Innovate" prompt to quickstart guide — asks the AI to identify the single smartest, most radically innovative addition it could make to the project
+- Added nav item, structured data (JSON-LD), and section for step 9 across all 5 languages
+- Updated all "8 steps/prompts" references to "9" in meta tags, intro text, and landing page descriptions
+
+### Why
+- New prompt encourages creative, high-leverage thinking after the structured build-and-secure workflow
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+- `index.html`, `es/index.html`, `zh/index.html`, `ko/index.html`, `ja/index.html`
+- `docs/changelog.md`
+
+### Memory updates
+- None
+
+## 2026-03-15
+
 ### Changed
 - Replaced PinchTab with Agent Browser (https://github.com/vercel-labs/agent-browser) in the Browser Automation section of tools page
 - Updated meta keywords from "pinchtab" to "agent-browser" on all tools pages
