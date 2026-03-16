@@ -13,6 +13,10 @@ python3 -m http.server 8000
 open http://localhost:8000
 ```
 
+## Guide note
+
+Step 3 recommends using VitePress for JavaScript projects or Zensical for Python projects when setting up the documentation site in `docs/`.
+
 ## Commit workflow
 
 Every change goes through a review-before-commit loop:

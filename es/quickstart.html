@@ -252,16 +252,16 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder — a static HTML documentation site:
-- No build step, no framework, no static site generator
-- Plain .html files with one shared style.css
-- Simple client-side search across all doc pages
+Also require a docs/ folder — a documentation site built with:
+- VitePress for JavaScript projects
+- Zensical for Python projects
+- Pick the option that matches the main project language
 - Internal documentation
 - Changelog
 
 Save the recommendation to .memory/tech-stack.md</code></pre>
 
-      <p>Tu sitio de documentación debe ser tan simple como el proyecto en sí — archivos HTML estáticos que puedes abrir en un navegador. Sin generadores, sin pasos de compilación. Incluye una búsqueda simple del lado del cliente para encontrar cualquier cosa en todas las páginas de documentación sin necesidad de un servidor.</p>
+      <p>No escribas la documentación a mano como HTML estático. Usa VitePress cuando el proyecto pertenezca al ecosistema JavaScript, o Zensical cuando pertenezca al ecosistema Python. La herramienta de documentación debe coincidir con el lenguaje principal del proyecto para que siga siendo fácil de mantener.</p>
 
       <h3>Logging y trazabilidad desde el día uno</h3>
 

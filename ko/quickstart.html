@@ -165,14 +165,14 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder — a static HTML documentation site:
-- No build step, no framework, no static site generator
-- Plain .html files with one shared style.css
-- Simple client-side search across all doc pages
+Also require a docs/ folder — a documentation site built with:
+- VitePress for JavaScript projects
+- Zensical for Python projects
+- Pick the option that matches the main project language
 - Internal documentation
 - Changelog
 
-Save the recommendation to .memory/tech-stack.md</code></pre><p>문서 사이트는 프로젝트 자체만큼 단순해야 합니다 — 브라우저에서 바로 열 수 있는 정적 HTML 파일. 생성기도, 빌드 단계도 없습니다. 가벼운 클라이언트 측 검색을 포함하여 서버 없이도 모든 문서 페이지에서 원하는 것을 찾을 수 있게 하세요.</p><h3>첫날부터 로깅과 추적</h3><p>스택에는 구조화된 로깅, 상관관계 ID 메커니즘, 로그 레벨 전략이 포함되어야 합니다. 이것은 선택 사항이 아닙니다.</p><div class="table-wrap"><table><thead><tr><th>레벨</th><th>용도</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>세밀한 실행 경로 — 함수 진입/종료, 변수 값</td></tr><tr><td><code>DEBUG</code></td><td>내부 로직 — 분기 결정, 캐시 적중/미스</td></tr><tr><td><code>INFO</code></td><td>상태 전환, 라이프사이클 이벤트, 요청 요약</td></tr><tr><td><code>WARN</code></td><td>복구 가능한 문제, 대체 경로, 재시도</td></tr><tr><td><code>ERROR</code></td><td>실패, 처리되지 않은 상태, 불변성 위반</td></tr></tbody></table></div><p>개발에서는 상세하게. 프로덕션에서는 구조화되고 쿼리 가능하게. 모든 요청에는 어디든 따라가는 상관관계 ID가 있습니다.</p></section>
+Save the recommendation to .memory/tech-stack.md</code></pre><p>문서를 정적 HTML로 손수 작성하지 마세요. 프로젝트가 JavaScript 생태계에 있다면 VitePress를, Python 생태계에 있다면 Zensical을 사용하세요. 문서 도구는 프로젝트의 주 언어와 맞아야 유지보수가 쉬워집니다.</p><h3>첫날부터 로깅과 추적</h3><p>스택에는 구조화된 로깅, 상관관계 ID 메커니즘, 로그 레벨 전략이 포함되어야 합니다. 이것은 선택 사항이 아닙니다.</p><div class="table-wrap"><table><thead><tr><th>레벨</th><th>용도</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>세밀한 실행 경로 — 함수 진입/종료, 변수 값</td></tr><tr><td><code>DEBUG</code></td><td>내부 로직 — 분기 결정, 캐시 적중/미스</td></tr><tr><td><code>INFO</code></td><td>상태 전환, 라이프사이클 이벤트, 요청 요약</td></tr><tr><td><code>WARN</code></td><td>복구 가능한 문제, 대체 경로, 재시도</td></tr><tr><td><code>ERROR</code></td><td>실패, 처리되지 않은 상태, 불변성 위반</td></tr></tbody></table></div><p>개발에서는 상세하게. 프로덕션에서는 구조화되고 쿼리 가능하게. 모든 요청에는 어디든 따라가는 상관관계 ID가 있습니다.</p></section>
 
     <section id="step-4"><span class="step-label">4단계</span><h2>진입점 만들기</h2><p>에이전트에 이것을 붙여넣으세요:</p><pre><code>Generate:
 

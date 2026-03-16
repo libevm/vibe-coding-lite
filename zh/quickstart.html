@@ -252,16 +252,16 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder — a static HTML documentation site:
-- No build step, no framework, no static site generator
-- Plain .html files with one shared style.css
-- Simple client-side search across all doc pages
+Also require a docs/ folder — a documentation site built with:
+- VitePress for JavaScript projects
+- Zensical for Python projects
+- Pick the option that matches the main project language
 - Internal documentation
 - Changelog
 
 Save the recommendation to .memory/tech-stack.md</code></pre>
 
-      <p>你的文档站点应该和项目本身一样简单——可以直接在浏览器中打开的静态HTML文件。不需要生成器，不需要构建步骤。包含一个轻量级的客户端搜索功能，这样你就可以在所有文档页面中查找任何内容，无需服务器。</p>
+      <p>不要把文档手写成静态HTML。项目属于 JavaScript 生态时使用 VitePress，属于 Python 生态时使用 Zensical。文档工具应该与项目的主要语言保持一致，这样文档才容易维护。</p>
 
       <h3>从第一天起就要有日志和追踪</h3>
 

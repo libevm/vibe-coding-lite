@@ -165,14 +165,14 @@ Avoid:
 - Heavy abstraction
 - Premature scale tools
 
-Also require a docs/ folder — a static HTML documentation site:
-- No build step, no framework, no static site generator
-- Plain .html files with one shared style.css
-- Simple client-side search across all doc pages
+Also require a docs/ folder — a documentation site built with:
+- VitePress for JavaScript projects
+- Zensical for Python projects
+- Pick the option that matches the main project language
 - Internal documentation
 - Changelog
 
-Save the recommendation to .memory/tech-stack.md</code></pre><p>ドキュメントサイトはプロジェクト自体と同じくらいシンプルであるべきです — ブラウザで直接開ける静的HTMLファイル。ジェネレーターもビルドステップも不要です。軽量なクライアントサイド検索を含めて、サーバーなしですべてのドキュメントページから何でも見つけられるようにしましょう。</p><h3>初日からロギングとトレーシング</h3><p>スタックには構造化ロギング、相関IDメカニズム、ログレベル戦略が含まれなければなりません。これはオプションではありません。</p><div class="table-wrap"><table><thead><tr><th>レベル</th><th>用途</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>きめ細かい実行パス — 関数の入口/出口、変数値</td></tr><tr><td><code>DEBUG</code></td><td>内部ロジック — 分岐判断、キャッシュヒット/ミス</td></tr><tr><td><code>INFO</code></td><td>状態遷移、ライフサイクルイベント、リクエストサマリー</td></tr><tr><td><code>WARN</code></td><td>回復可能な問題、フォールバックパス、リトライ</td></tr><tr><td><code>ERROR</code></td><td>障害、未処理状態、不変条件違反</td></tr></tbody></table></div><p>開発では詳細に。プロダクションでは構造化されクエリ可能に。すべてのリクエストにはどこまでも付いていく相関IDがあります。</p></section>
+Save the recommendation to .memory/tech-stack.md</code></pre><p>ドキュメントを静的HTMLとして手書きしないでください。プロジェクトがJavaScriptエコシステムならVitePress、PythonエコシステムならZensicalを使いましょう。ドキュメントツールはプロジェクトの主要言語に合わせることで、保守しやすくなります。</p><h3>初日からロギングとトレーシング</h3><p>スタックには構造化ロギング、相関IDメカニズム、ログレベル戦略が含まれなければなりません。これはオプションではありません。</p><div class="table-wrap"><table><thead><tr><th>レベル</th><th>用途</th></tr></thead><tbody><tr><td><code>TRACE</code></td><td>きめ細かい実行パス — 関数の入口/出口、変数値</td></tr><tr><td><code>DEBUG</code></td><td>内部ロジック — 分岐判断、キャッシュヒット/ミス</td></tr><tr><td><code>INFO</code></td><td>状態遷移、ライフサイクルイベント、リクエストサマリー</td></tr><tr><td><code>WARN</code></td><td>回復可能な問題、フォールバックパス、リトライ</td></tr><tr><td><code>ERROR</code></td><td>障害、未処理状態、不変条件違反</td></tr></tbody></table></div><p>開発では詳細に。プロダクションでは構造化されクエリ可能に。すべてのリクエストにはどこまでも付いていく相関IDがあります。</p></section>
 
     <section id="step-4"><span class="step-label">ステップ4</span><h2>エントリーポイントを作る</h2><p>エージェントにこれを貼り付けてください：</p><pre><code>Generate:
 

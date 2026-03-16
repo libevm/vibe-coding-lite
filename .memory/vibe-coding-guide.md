@@ -186,11 +186,11 @@ Avoid:
 
 Also require:
 
-A `docs/` folder — a static HTML documentation site:
+A `docs/` folder — a documentation site built with:
 
-- No build step, no framework, no static site generator
-- Plain `.html` files with one shared `style.css`
-- Simple client-side search across all doc pages
+- VitePress for JavaScript projects
+- Zensical for Python projects
+- Pick the option that matches the main project language
 - Internal documentation
 - Changelog
 

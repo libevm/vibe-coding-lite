@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-03-16
+
+### Changed
+- Updated Step 3 in the quickstart guide across all 5 languages to recommend VitePress for JavaScript projects or Zensical for Python projects for the `docs/` site, replacing the earlier static HTML docs instruction
+- Rewrote the Step 3 explanatory paragraph on all quickstart pages to align the docs tool with the project's primary language
+- Updated `.memory/vibe-coding-guide.md` and `README.md` to reflect the new documentation-site recommendation
+
+### Why
+- The guide should point people to ecosystem-native documentation tools instead of hand-written static HTML docs
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+- `.memory/vibe-coding-guide.md`
+- `README.md`
+- `docs/changelog.md`
+
+### Memory updates
+- `.memory/vibe-coding-guide.md`
+
 ## 2026-03-15
 
 ### Added
