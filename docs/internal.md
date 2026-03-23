@@ -13,6 +13,7 @@ The site is multi-page:
 - `index.html` — Landing page with quicklinks. Uses `body.landing` class. No CDN scripts (no Prism, no Mermaid). Minimal inline error handler.
 - `quickstart.html` — The 8-step vibe coding guide. Uses sidebar/topbar nav, Prism.js, Mermaid.js, and `js/main.js`.
 - `tools.html` — Curated tools page. Uses `body.subpage` class with `.subpage-header` / `.subpage-main`. No CDN scripts needed.
+- `snippets.html` — Short, reusable vibe coding techniques. Uses `body.subpage` class. Each snippet is a `<section>` with an `id`, `<h2>`, explanation text, and a `<pre><code>` prompt block. No CDN scripts needed.
 
 All pages share `css/style.css`. Guide-specific nav styles are scoped with `:not(.landing-nav)` and `body:not(.landing)` to avoid conflicts with landing page layout.
 

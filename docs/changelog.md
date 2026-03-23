@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-03-23
+
+### Added
+- New `snippets.html` subpage — "Snippets" section for short, reusable vibe coding techniques
+- First snippet: "Steal the Best Style Guide in Open Source" — use TigerBeetle's Tiger Style as a blueprint to generate a code style doc for any language via AI agent
+- "Snippets" quicklink card on all 5 landing pages
+- Translated snippets page in all 4 language directories: `es/`, `zh/`, `ko/`, `ja/`
+- Prompts in code blocks stay in English across all translations (per i18n convention)
+
+### Why
+- A dedicated page for short, actionable techniques gives a home to tips that don't fit in the quickstart guide or tools list. The Tiger Style snippet demonstrates cross-pollinating best practices across languages using AI — a high-leverage technique worth sharing.
+
+### Files touched
+- `snippets.html` (created), `es/snippets.html` (created), `zh/snippets.html` (created), `ko/snippets.html` (created), `ja/snippets.html` (created)
+- `index.html`, `es/index.html`, `zh/index.html`, `ko/index.html`, `ja/index.html` (quicklink added)
+- `docs/changelog.md` (this entry)
+- `docs/internal.md` (snippets page pattern documented)
+
+### Memory updates
+- `docs/internal.md`
+
 ## 2026-03-16
 
 ### Changed
