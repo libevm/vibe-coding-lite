@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-04-03
+
+### Added
+- Added Absurd (https://earendil-works.github.io/absurd/) to the tools page as a new Durable Workflows recommendation across all 5 languages
+- Updated tools-page meta keywords on all language variants to include Absurd / durable workflows
+
+### Why
+- Absurd fits the site's bar for tools that earn their place in a vibe coding workflow, especially for durable PostgreSQL-backed workflow execution
+
+### Files touched
+- `tools.html`, `es/tools.html`, `zh/tools.html`, `ko/tools.html`, `ja/tools.html`
+- `docs/changelog.md` (this entry)
+
+### Memory updates
+- None
+
 ## 2026-03-23
 
 ### Added
