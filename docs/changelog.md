@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-04-04
+
+### Changed
+- Expanded Step 9 "Innovate" in the quickstart guide across all 5 languages from a single prompt into a small prompt pack with 4 additional prompts about pushing past “good enough,” surfacing ignored weaknesses, and leaning into uncomfortable but high-value improvements
+- Updated Step 9 structured-data descriptions on all quickstart pages to reflect the broader innovation prompt pack
+- Added the same innovation prompt pack to `.memory/vibe-coding-guide.md` and noted it in `README.md`
+
+### Why
+- The innovate step should offer multiple angles for finding the next meaningful improvement, not just one framing
+
+### Files touched
+- `quickstart.html`, `es/quickstart.html`, `zh/quickstart.html`, `ko/quickstart.html`, `ja/quickstart.html`
+- `.memory/vibe-coding-guide.md`
+- `README.md`
+- `docs/changelog.md`
+
+### Memory updates
+- `.memory/vibe-coding-guide.md`
+
 ## 2026-04-03
 
 ### Added

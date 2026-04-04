@@ -471,6 +471,22 @@ If the security pass reveals scenarios that aren't logged — add logging before
 
 ---
 
+# Innovate
+
+Once the system is working and reasonably stable, use the AI to push past the obvious.
+
+Try prompts like:
+
+- `whats the single smartest and most radically innovative and accretive and useful and compelling addition you could make to the project at this point?`
+- `Where are you stopping at good enough?`
+- `What would it look like to push beyond?`
+- `What's the skeleton in the closet of what you're working on? The thing everyone knows is broken but haven't fixed yet?`
+- `Where are you limiting yourself because it feels uncomfortable to lean in?`
+
+These are designed to surface neglected weaknesses, comfort-driven constraints, and the highest-leverage next improvement.
+
+---
+
 # How to Think While Using This
 
 You are not managing code.

@@ -13,9 +13,10 @@ python3 -m http.server 8000
 open http://localhost:8000
 ```
 
-## Guide note
+## Guide notes
 
-Step 3 recommends using VitePress for JavaScript projects or Zensical for Python projects when setting up the documentation site in `docs/`.
+- Step 3 recommends using VitePress for JavaScript projects or Zensical for Python projects when setting up the documentation site in `docs/`.
+- Step 9 now includes a small prompt pack for pushing beyond “good enough,” surfacing neglected weaknesses, and finding the highest-leverage next improvement.
 
 ## Commit workflow
 
